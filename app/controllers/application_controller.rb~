@@ -1,0 +1,51 @@
+class ApplicationController < ActionController::Base
+  protect_from_forgery
+  helper_method :current_user
+  before_filter { |c| Authorization.current_user = c.current_user }
+  
+  
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    
+  end
+  
+  protected
+  def confirm_login
+   unless session[:user_id]
+    flash[:notice] = "Please log in"
+    redirect_to admin_path 
+    return false
+   else
+    return true	
+   end 	 
+  end
+private  
+
+def role_chooser
+@user=User.find(current_user.id) 
+@user.roles.each do |role| 
+@type = role.name
+return @type
+end 
+end 
+  
+private 
+def layout_chooser
+ if (role_chooser=='Guest')
+  return 'guest'
+ else
+  return 'accessible'
+ end 
+end  
+ 
+ 
+
+def permission_denied
+  flash[:error] = "Sorry, you not allowed to access that page."
+  redirect_to root_url
+end
+
+ 
+
+  
+end

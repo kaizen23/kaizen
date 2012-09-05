@@ -1,0 +1,14 @@
+%p
+  = @lesson.name
+%p
+  = @lesson.description.html_safe
+
+
+
+
+
+
+
+
+
+

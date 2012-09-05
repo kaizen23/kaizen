@@ -1,0 +1,6 @@
+%p Users who have the 
+
+- @role.users.each do |user| 
+  = user.id 
+  
+

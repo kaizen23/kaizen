@@ -1,0 +1,22 @@
+
+= form_tag accessible_index_path do 
+  
+  #login-box
+    %h2 Login
+    %br
+    %br
+    #login-box-name
+      = label_tag :username 
+    #login-box-field 
+      = text_field_tag :username,nil,:class =>"form-login "
+    #login-box-name
+      = label_tag :password 
+    #login-box-field
+      = password_field_tag :password ,nil,:class =>"form-login "
+      %br
+      %br
+     
+    .action
+      = image_submit_tag("login-btn.png")
+    %h1= flash[:notice]   
+

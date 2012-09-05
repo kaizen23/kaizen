@@ -1,0 +1,25 @@
+%h1 Listing courses
+%br
+%table
+  %tr
+    %th Name
+    %th Actions
+  
+
+  - @courses.each do |course|
+    %tr
+      %td= course.name
+      %td.actions
+        = link_to 'View the lessons', course_lessons_path(course)
+        = link_to 'Show', course
+        = link_to 'Edit', edit_course_path(course)
+        = link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete
+
+%br
+%p.actions
+  = link_to 'New Course', new_course_path
+
+%p.actions
+  = link_to 'Back to menu', panel_path
+
+ 

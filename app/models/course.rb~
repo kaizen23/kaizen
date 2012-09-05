@@ -1,0 +1,6 @@
+class Course < ActiveRecord::Base
+  attr_accessible :description, :name
+  has_many:lessons
+  translates  :description, :name
+  attr_accessible :locale
+end

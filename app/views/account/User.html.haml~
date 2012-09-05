@@ -1,0 +1,16 @@
+.field
+  %br
+  %h1 User Panel
+
+  %table
+    %tr
+      %th Name
+      %br
+
+    - @courses.each do |course|
+      %tr
+        %td= link_to course.name, course
+  
+
+  %br
+  %p= link_to 'Back to menu', panel_path

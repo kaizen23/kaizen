@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title "Krab"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+
+    = csrf_meta_tags
+  %body
+    .two-col
+      #header
+        #head
+    
+          #current_user 
+            -if current_user 
+              Welcome
+              = current_user.username |
+              = link_to "Log out", log_out_path 
+            -else
+              = link_to "Sign up", new_user_path     
+        %ul.button-list
+          %li= link_to_unless_current  'Users', users_path, :class=>"button" 
+          %li= link_to_unless_current  'New Courses', courses_path, :class=>"button" 
+          %li= link_to_unless_current  'Photos', users_path, :class=>"button" 
+          %li= link_to_unless_current  'Models 3d', courses_path, :class=>"button"   
+          %li= link_to_unless_current  'Products', courses_path, :class=>"button" 
+      #content   
+        = yield
+      #footer
+  

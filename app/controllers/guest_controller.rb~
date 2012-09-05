@@ -1,0 +1,13 @@
+
+class GuestController < ApplicationController
+layout :layout_chooser
+
+  def index
+  @courses = Course.all
+  @lessons = @course.lessons.all
+  end
+
+  def about_us
+  end
+
+end    

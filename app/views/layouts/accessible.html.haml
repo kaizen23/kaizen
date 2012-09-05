@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %title Admin
+    = stylesheet_link_tag    "accessible","screen"
+    = javascript_include_tag "application.js"
+    = javascript_include_tag "http://www.x3dom.org/download/x3dom.js"
+    = csrf_meta_tags
+  %body
+    .two-col
+      #header
+        #head
+          #current_user
+            -if current_user 
+              Welcome
+              = current_user.username 
+              |
+              = link_to "Log out", log_out_path 
+            -else
+              = link_to "Sign up", new_user_path
+     
+     
+        %ul.button-list
+          %li= link_to_unless_current  'Users', users_path, :class=>"button" 
+          %li= link_to_unless_current  'Courses', courses_path, :class=>"button" 
+          %li= link_to_unless_current  'Photos', users_path, :class=>"button" 
+          %li= link_to_unless_current  'Models 3d', new_course_path, :class=>"button"  
+          %li= link_to_unless_current  'Products', new_course_path, :class=>"button" 
+      #content
+        = yield 
+      #footer
+

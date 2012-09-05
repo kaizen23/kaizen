@@ -1,0 +1,171 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// Import the non-default scaffolding module.
+@import "blueprint/scaffolding";
+@import "compass/css3";
+@import "blueprint/liquid";
+
+
+
+// To generate css equivalent to the blueprint css but with your
+// configuration applied, uncomment:
+// @include blueprint
+
+// If you are doing a lot of stylesheet concatenation, it is suggested
+// that you scope your blueprint styles, so that you can better control
+// what pages use blueprint when stylesheets are concatenated together.
+
+.actions{  background: #364f86; max-width:330px; }
+
+table {
+ border-collapse: collapse; border: 1px solid blue;
+td { border-collapse: collapse; border: 1px solid blue; padding:6px; };
+th { border-collapse: collapse; border: 1px solid blue; padding:6px; };
+      }
+.two-col {
+a {  text-decoration: none; color:white; };
+  height: 900px;
+  @include container;
+  background-color: #cccccc; 
+  #header {
+   @include column(24);
+   height: 80px; 
+   background-color: #364f86;}
+  #head { @include column(24,last); 
+   height: 50px; 
+          
+  }
+  #current_user{
+   @include column(2);
+   @include prepend(17);
+   @include append(8);
+    
+   font-size:14px;
+   color:#fff; 
+   white-space:nowrap;
+   }
+  #footer {
+   @include column(24);
+   height: 20px; 
+   background-color: #364f86;}
+   
+  #content {
+   @include column(24,true);
+   @include prepend(9);
+   height: 700px;
+   position:relative;
+   overflow-y:auto;
+   top:100px;} 
+
+.button {
+		outline: 0;
+		padding: 5px 12px;
+		display: block;
+		color: #9fa8b0;
+		font-size:13px;
+		
+		text-shadow: 1px 1px #1f272b;
+		border: 1px solid #2b1013;
+		@include border-top-radius(10px);
+		@include background-image(linear-gradient( top, #89313b, #be4856));}
+		/*background: -moz-linear-gradient(top, #3D4850 3%, #313d45 4%, #232B30 100%);}
+	     */   
+
+.button:hover {
+		color: #fff;
+		background: #4C5A64; /* old browsers */
+		/*background: -moz-linear-gradient(top, #4C5A64 3%, #404F5A 4%, #2E3940 100%); /* firefox */
+		/*background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#4C5A64), color-stop(4%,#404F5A), color-stop(100%,#2E3940)); /* webkit */       @include background-image(linear-gradient( top,#c45b68,#cb6e79));
+		
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C5A64', endColorstr='#2E3940',GradientType=0 ); /* ie */
+	}
+	
+	.button:active {
+		background-position: 0 top;
+		position: relative;
+		top: 1px;
+		color: #fff;
+		padding: 6px 12px 4px;
+		background: #20282D; /* old browsers */
+		@include background-image(linear-gradient( top, #511d23, #64242b));
+		/*background: -moz-linear-gradient(top, #20282D 3%, #252E34 51%, #222A30 100%); /* firefox */
+		/*background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#20282D), color-stop(51%,#252E34), color-stop(100%,#222A30)); /* webkit */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20282D', endColorstr='#222A30',GradientType=0 ); /* ie */
+		-moz-box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* Firefox */
+		-webkit-box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* Safari, Chrome */
+		box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* CSS3 */
+	}
+	
+	
+.button-list { 
+   list-style: none; 
+   padding: 0;
+   margin: 0; 
+   width: 100%; 
+   display: block; 
+   margin: 0 0 0; 
+   @include column(8);
+   @include prepend(9);
+   text-decoration:none; 
+   position:relative;
+   top:3px;
+   li { float: left; margin: 0 10px 0 0;  }}	
+  
+  
+  }
+
+
+body.bp {
+  @include blueprint-typography(true);
+  @include blueprint-utilities;
+  @include blueprint-debug;
+  @include blueprint-interaction;
+  // Remove the scaffolding when you're ready to start doing visual design.
+  // Or leave it in if you're happy with how blueprint looks out-of-the-box
+}
+
+form.bp {
+  @include blueprint-form;
+  // You'll probably want to remove the scaffolding once you start styling your site.
+  @include blueprint-scaffolding; }
+
+// Page layout can be done using mixins applied to your semantic classes and IDs:
+body.two-col {
+  #container {
+    @include container; }
+  #header, #footer {
+    @include column($blueprint-grid-columns); }
+  #sidebar {
+    // One third of the grid columns, rounding down. With 24 cols, this is 8.
+    $sidebar-columns: floor($blueprint-grid-columns / 3);
+    @include column($sidebar-columns); }
+  #content {
+    // Two thirds of the grid columns, rounding up.
+    // With 24 cols, this is 16.
+    $content-columns: ceil(2 * $blueprint-grid-columns / 3);
+    // true means it's the last column in the row
+    @include column($content-columns, true); } }
+    
+    
+
+
+
+
+		
+
+
+
+	
+
+ 
+    
+    
+    
+

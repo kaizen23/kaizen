@@ -1,0 +1,3 @@
+%h1 Books#history
+%p Find me in app/views/books/history.html.haml
+=render_navigation

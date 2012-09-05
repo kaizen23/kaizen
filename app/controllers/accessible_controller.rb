@@ -1,0 +1,55 @@
+
+class AccessibleController < ApplicationController
+  before_filter :confirm_login, :except	=>[:new,:create,:logout]
+  
+  
+ 
+ 
+  def new
+   if session[:user_id]
+   redirect_to panel_path
+   end
+  end
+  
+  
+  def manage  
+  @courses = Course.all
+  end 
+  
+  def nowy
+  end
+  
+  
+  def create
+  user = User.authenticate(params[:username],params[:password])
+   if user
+    session[:user_id] = user.id
+    session[:username] = user.username
+    flash[:notice]  ="Logged in!" 
+      if (role_chooser=='Admin')
+       redirect_to (panel_path)
+      else if(role_chooser=='Guest')
+       redirect_to(guest_index_path)
+      else if (role_chooser=='Moderator')
+       redirect_to (panel_path)
+      end
+      end
+      end  
+       
+   else
+   flash[:notice]  ="Invalid email or password"
+   redirect_to admin_path
+   end
+  end 
+  
+  def logout
+  session[:user_id] = nil
+  session[:username] = nil
+  flash[:notice]  ="You have been logged out!"
+  redirect_to admin_path
+  end
+  
+  
+
+
+end
