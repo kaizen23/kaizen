@@ -1,7 +1,9 @@
-%h1 Editing page
+%h1 Edytowanie strony
 
 = render 'form'
 
-= link_to 'Show', @page
+= link_to 'Pokaż', course_lesson_path(@course,@lesson,@page)
 \|
-= link_to 'Back', pages_path
+= link_to 'Powrót', course_lesson_pages_path(@course,@lesson)
+
+

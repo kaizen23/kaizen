@@ -11,7 +11,7 @@
     = f.text_area  :content
   .field
     = f.label :name		
-    = f.text_area  :name
+    = f.number_field  :name
   .field
     = f.label :lesson_id
     = f.number_field :lesson_id

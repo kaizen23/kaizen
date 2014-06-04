@@ -1,7 +1,7 @@
-%h1 Listing lessons
+%h1 Lista lekcji
 %br
 %h1.actions
-  = link_to 'Back to Courses List', courses_path
+  = link_to 'Powrót do listy kursów', courses_path
 %br
 %table
   %tr
@@ -17,15 +17,15 @@
       %td= lesson.id
       %td= lesson.name
       %td.actions
-        = link_to 'View the pages', course_lesson_pages_path(@course,lesson) 
+        = link_to 'Pokaż strony', course_lesson_pages_path(@course,lesson) 
         |
-        = link_to 'Show', course_lesson_path(@course,lesson)
+        = link_to 'Pokaż', course_lesson_path(@course,lesson)
         |
-        = link_to 'Edit', edit_course_lesson_path(@course,lesson)
+        = link_to 'Edytuj', edit_course_lesson_path(@course,lesson)
         |
-        = link_to 'Destroy', [@course,lesson], :confirm => 'Are you sure?', :method => :delete
+        = link_to 'Usuń', [@course,lesson], :confirm => 'Are you sure?', :method => :delete
 
 %br
 %p.actions
 
-  = link_to 'New Lesson', new_course_lesson_path(@course)
+  = link_to 'Nowe lekcje', new_course_lesson_path(@course)

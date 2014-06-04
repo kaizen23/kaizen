@@ -2,15 +2,15 @@
 = form_tag accessible_index_path do 
   
   #login-box
-    %h2 Login
+    %h2 Logowanie
     %br
     %br
     #login-box-name
-      = label_tag :username 
+      = label_tag :Użytkownik
     #login-box-field 
       = text_field_tag :username,nil,:class =>"form-login "
     #login-box-name
-      = label_tag :password 
+      = label_tag :Hasło 
     #login-box-field
       = password_field_tag :password ,nil,:class =>"form-login "
       %br

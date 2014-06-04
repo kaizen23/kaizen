@@ -1,8 +1,8 @@
 !!!
 %html
   %head
-    %title Rosomak
-    = stylesheet_link_tag    "guest","rvn-gallery","lightbox"
+    %title Salon marzeń
+    = stylesheet_link_tag    "guest","rvn-gallery","lightbox","imageScroller"
     = javascript_include_tag "http://www.x3dom.org/download/x3dom.js"
     = javascript_include_tag "lightbox","rvn-gallery","application"
     
@@ -12,19 +12,29 @@
     
     .two-col
       #header
+        #outerContainer
+          #imageScroller
+            #viewer.js-disabled
+              = link_to image_tag( "/assets/toyota2.jpg",:title => "Apple"), "http://www.apple.com",:class => "wrapper"
+              = link_to image_tag( "/assets/apple.jpg",:title => "Apple"), "http://www.apple.com",:class => "wrapper"
+              = link_to image_tag( "/assets/mazda.jpg",:title => "Apple"), "http://www.apple.com",:class => "wrapper"
+              = link_to image_tag( "/assets/bmw2.jpg",:title => "Apple"), "http://www.apple.com",:class => "wrapper"
+              = link_to image_tag( "/assets/ferari2.jpg",:title => "Apple"), "http://www.apple.com",:class => "wrapper"
+              = link_to image_tag( "/assets/porsche2.jpg",:title => "Apple"), "http://www.apple.com",:class => "wrapper"
+    
         %h1
           =link_to image_tag("english.png"), url_for( :locale => 'en' ) 
           =link_to image_tag("polish.png"), url_for( :locale => 'pl' )
          
         %h1
           -if current_user 
-            Welcome : 
+            Witaj : 
             = current_user.username
             |
-            = link_to "Log out", log_out_path 
-            = flash[:notice] 
+            = link_to "Wyloguj", log_out_path 
+            /= flash[:notice] 
           -else
-            = link_to "Sign up", new_user_path
+            = link_to "Zarejestruj się", new_user_path
          
       
         %ul.button-list
@@ -41,7 +51,7 @@
           = render_navigation(:renderer => :breadcrumbs, :join_with => ' &raquo; ')
           = yield
       #footer
-        %h1 Copyright © 2012 OBRUM
+        %h1 Copyright © 2012 by Kaizen
   
       
 

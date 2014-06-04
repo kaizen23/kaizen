@@ -1,28 +1,27 @@
-%h1 Listing courses
+%h1 Lista kursów
 %br
 %table
   %tr
-    %th Name
-    %th Actions
+    %th Nazwa
+    %th Akcja
   
 
   - @courses.each do |course|
     %tr
       %td= course.name
       %td.actions
-        = link_to 'View the lessons', course_lessons_path(course)
+        = link_to 'Zobacz lekcje', course_lessons_path(course)
         |
-        = link_to 'Show', course
+        = link_to 'Pokaż', course
         |
-        = link_to 'Edit', edit_course_path(course)
+        = link_to 'Edytuj', edit_course_path(course)
         |
-        = link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete
+        = link_to 'Usuń', course, :confirm => 'Are you sure?', :method => :delete
 
 %br
 %p.actions
-  = link_to 'New Course', new_course_path
+  = link_to 'Nowe kursy', new_course_path
 
-%p.actions
-  = link_to 'Back to menu', panel_path
+
 
  

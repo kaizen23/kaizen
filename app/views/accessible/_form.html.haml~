@@ -18,5 +18,5 @@
      
     .action
       = image_submit_tag("login-btn.png")
-    %p= flash[:notice]   
+    %h1= flash[:notice]   
 

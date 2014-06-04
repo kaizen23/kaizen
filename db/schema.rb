@@ -73,12 +73,12 @@ ActiveRecord::Schema.define(:version => 20120820073301) do
   create_table "user_translations", :force => true do |t|
     t.integer  "user_id"
     t.string   "locale"
-    t.string   "username"
-    t.string   "email"
-    t.string   "last_name"
-    t.string   "first_name"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "username"
+    t.string   "first_name"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end

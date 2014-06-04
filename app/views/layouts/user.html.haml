@@ -11,18 +11,19 @@
         #head
           #current_user 
             -if current_user 
-              Welcome
+              Witaj
               = current_user.username
-              = link_to "Log out", log_out_path 
+              |
+              = link_to "Wyloguj się", log_out_path 
             -else
-              = link_to "Sign up", new_user_path
+              = link_to "Zarejestruj się", new_user_path
       
         %ul.button-list
-          %li= link_to_unless_current  'Users', users_path, :class=>"button" 
-          %li= link_to_unless_current  'New Courses', courses_path, :class=>"button" 
-          %li= link_to_unless_current  'Photos', users_path, :class=>"button" 
-          %li= link_to_unless_current  'Models 3d', courses_path, :class=>"button"  
-          %li= link_to_unless_current  'Products', courses_path, :class=>"button"
+          %li= link_to_unless_current  'Użytkownicy', users_path, :class=>"button" 
+          %li= link_to_unless_current  'Produkty', courses_path, :class=>"button" 
+          %li= link_to_unless_current  'Zdjęcia', new_course_path, :class=>"button" 
+          %li= link_to_unless_current  'Modele 3d', courses_path, :class=>"button"  
+         
       #content
         = flash[:notice] 
         = yield

@@ -1,20 +1,21 @@
-%h1 Listing users
+%h1 Lista użytkowników
+%br
 
 %table
   %tr
-    %th Username
-    %th
-    %th
-    %th
+    %th Nick
+    %th Akcja
 
   - @users.each do |user|
     %tr
       %td= user.username
-
-
-      %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+      %td 
+        = link_to 'Pokaż', user
+        |
+        = link_to 'Edytuj', edit_user_path
+        |
+        = link_to 'Usuń', user, :confirm => 'Are you sure?', :method => :delete
   
 
-%br
-= link_to 'Back to menu', panel_path
-= render_navigation
+
+
