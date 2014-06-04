@@ -1,7 +1,0 @@
-.field
-  %br
-  %h1 User Menu
-  %p
-  %p= link_to "Courses", courses_path 
-  %br
-

@@ -1,24 +1,11 @@
 Krab::Application.routes.draw do
-   scope "(:locale)", :locale => /en|nl/ do
-  get "fiction/history"
+   scope "(:locale)", :locale => /en|pl/ do
 
-  get "fiction/sports"
-
-  get "fiction/sports2"
-
-  get "books/start2"
-
-  get "books/fiction"
-
-  get "books/history"
-
-  get "books/sports"
-  get "books/sports2"
   
   get "guest/about_us"
 
   get "log_out" => "accessible#logout", :as => "log_out"
-  get "panel" => "accessible#manage", :as => "panel"
+  get "panel" => "Courses", :as => "panel"
   get "admin" => "accessible#new", :as => "admin"
   get "users/new"
   get "users/sports"

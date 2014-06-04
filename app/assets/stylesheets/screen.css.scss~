@@ -22,7 +22,7 @@
 // that you scope your blueprint styles, so that you can better control
 // what pages use blueprint when stylesheets are concatenated together.
 
-.actions{  background: #364f86; max-width:330px; }
+.actions{  background: #364f86; max-width:350px; }
 
 table {
  border-collapse: collapse; border: 1px solid blue;
@@ -61,7 +61,7 @@ a {  text-decoration: none; color:white; };
    @include prepend(9);
    height: 700px;
    position:relative;
-
+   overflow-y:auto;
    top:100px;} 
 
 .button {

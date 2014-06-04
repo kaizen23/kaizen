@@ -41,8 +41,7 @@ a {  text-decoration: none; color: #9fa8b0;
    @include border-radius(10px);
    background: { color:#52636b;
    size: 160px 60px;
-   image: image-url("obrum.jpg");
-   repeat:no-repeat;};
+   };
    border-top-style:solid;
    border-top-color:white;
    border-top-width:8px;
@@ -136,7 +135,8 @@ a {  text-decoration: none; color: #9fa8b0;
 		@include border-radius(10px);
 		@include background-image(linear-gradient( top, #3D4850, #232b30));}
 		/*background: -moz-linear-gradient(top, #3D4850 3%, #313d45 4%, #232B30 100%);}
-	     */   
+	     */
+	        
 
 .button:hover {
 		color: #fff;
@@ -188,6 +188,7 @@ a {  text-decoration: none; color: #9fa8b0;
    @include column(12);
    @include prepend(17);
    text-decoration:none; 
+ 
    li { float: left; margin: 0 10px 0 0;  }}	
    
 .button-list2 { 

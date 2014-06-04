@@ -1,3 +1,0 @@
-%h1 Books#sports
-%p Find me in app/views/books/sports.html.haml
-=render_navigation

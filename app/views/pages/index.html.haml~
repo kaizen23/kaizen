@@ -1,32 +1,31 @@
 %h1 Listing pages
 %br
 %h1.actions
-  = link_to 'Back to Courses List', courses_path 
+  = link_to 'Powrót do listy kursów', courses_path 
   |
-  = link_to 'Back to Lessons List', course_lessons_path
+  = link_to 'Powrót do listy lekcji', course_lessons_path
 %br
 %table
   %tr
     
-    %th name
-    %th action
-    %th
-    %th
+    %th nazwa
+    %th akcja
+   
 
   - @pages.each do |page|
     %tr
 
       %td= page.name
       %td.actions
-        = link_to 'Show', course_lesson_page_path(@course,@lesson,page)
+        = link_to 'Pokaż', course_lesson_page_path(@course,@lesson,page)
         |
-        = link_to 'Edit', edit_course_lesson_page_path(@course,@lesson,page)
+        = link_to 'Edytuj', edit_course_lesson_page_path(@course,@lesson,page)
         |
-        = link_to 'Destroy', [@course,@lesson,page], :confirm => 'Are you sure?', :method => :delete
+        = link_to 'Usuń', [@course,@lesson,page], :confirm => 'Are you sure?', :method => :delete
 
 %br
 %p.actions
-  =link_to 'New Page', new_course_lesson_page_path(@course,@lesson) 
+  =link_to 'Nowa strona', new_course_lesson_page_path(@course,@lesson) 
 
 
 

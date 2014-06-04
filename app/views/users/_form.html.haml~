@@ -7,20 +7,20 @@
           %li= msg
   
   #login-box
-    %h2 Login
+    %h2 Sign Up
     %br
     %br
     #login-box-name
-      = f.label :username 
+      = f.label :Użytkownik
     #login-box-field 
       = f.text_field :username ,:class =>"form-login "
       
     #login-box-name
-      = f.label :password
+      = f.label :Hasło
     #login-box-field 
       = f.password_field :password ,:class =>"form-login "
     #login-box-name 
-      = f.label :password_confirmation
+      = f.label :Powtórz_hasło
     #login-box-field
       = f.password_field :password_confirmation,:class =>"form-login "
     .action
